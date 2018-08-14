@@ -18,3 +18,8 @@ Route::resource('/', 'MainController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['auth','logged']], function () {
+    Route::get('dashboard', 'DashboardController@index');
+    Route::get('fakedata','DashboardController@fakeData');
+});

@@ -17,7 +17,37 @@
         <link href="limitless/css/icons/fontawesome/styles.min.css" rel="stylesheet" type="text/css">
         <link href="slick/slick.css" rel="stylesheet" type="text/css">
         <link href="slick/slick-theme.css" rel="stylesheet" type="text/css">
+        <!-- <link rel="stylesheet" type="text/css" href="https://docs.handsontable.com/pro/bower_components/handsontable-pro/dist/handsontable.full.min.css">
+        <link rel="stylesheet" type="text/css" href="https://handsontable.com/static/css/main.css"> -->
         <!-- /global stylesheets -->
+
+        
+
+        <link href="{{ asset('css/index.css') }}" rel="stylesheet">
+
+        <title> ID Crawl &mdash; @yield('title')</title>
+        <meta name="description" content="Indonesia Crawlers">
+
+        @php
+            $auth = Auth::user();
+        @endphp
+    </head>
+    <body>
+
+        @include('layouts.modules.header')          
+
+        @yield('content')
+
+        @include('layouts.modules.footer')
+        <script>
+            window.Laravel = {!! json_encode([
+                'csrfToken' => csrf_token(),
+            ]) !!};
+
+            @if(Auth::check())
+            var _users = {!! json_encode(Auth::user()) !!}
+            @endif
+        </script>
 
         <!-- Core JS files -->
         <script src="limitless/js/main/jquery.min.js"></script>
@@ -35,40 +65,12 @@
         <script src="limitless/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
         <script src="limitless/js/plugins/ui/moment/moment.min.js"></script>
         <script src="limitless/js/plugins/pickers/daterangepicker.js"></script>
+        <script src="limitless/js/plugins/tables/handsontable/handsontable.min.js"></script>
 
         <!-- <script src="js/app.js"></script> -->
         <script src="limitless/js/demo_pages/dashboard.js"></script>
+        <script src="js/dashboard.js"></script>
         <!-- /theme JS files -->
-
-        <link href="{{ asset('css/index.css') }}" rel="stylesheet">
-
-        <title> ID Crawl &mdash; @yield('title')</title>
-        <meta name="description" content="Indonesia Crawlers">
-
-        @php
-            $auth = Auth::user();
-        @endphp
-    </head>
-    <body>
-
-        @include('layouts.modules.header')
-        <div class="page-content">
-            <div class="content-wrapper">
-                
-
-                @yield('content')
-            </div>
-        </div>
-        @include('layouts.modules.footer')
-        <script>
-            window.Laravel = {!! json_encode([
-                'csrfToken' => csrf_token(),
-            ]) !!};
-
-            @if(Auth::check())
-            var _users = {!! json_encode(Auth::user()) !!}
-            @endif
-        </script>
         
     </body>
 </html>
