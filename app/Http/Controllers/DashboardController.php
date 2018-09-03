@@ -21,7 +21,7 @@ class DashboardController extends Controller
             ],
         ];
 
-        return view('dashboard',$data);
+        return view('dashboard.main',$data);
     }
 
     public function fakeData(){

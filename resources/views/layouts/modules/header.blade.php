@@ -1,4 +1,3 @@
-<div class="">
 <!-- main navbar -->
 <div class="navbar navbar-expand-md navbar-dark">
 	<div class="navbar-brand wmin-0 mr-5">
@@ -26,7 +25,7 @@
 						<span>Sign In</span>
 					</a>
 					
-					<ul class="dropdown-menu dropdown-menu-right mt-2">
+					<ul class="dropdown-menu dropdown-menu-right mt-2 login-box">
 						<li class="px-3 py-2">
 						<form class="form" method="POST" action="{{route('login')}}" role="form">
 								{{ csrf_field() }}
@@ -79,27 +78,4 @@
 			@endif
 		</ul>
 	</div>
-</div>
-<!-- /main navbar -->
-<!-- @if($auth)
-<div class="navbar navbar-expand-md navbar-dark">
-	<div class="text-center d-md-none w-100">
-		<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-navigation">
-			<i class="icon-unfold mr-2"></i>
-			Navigation
-		</button>
-	</div>
-
-	<div class="navbar-collapse collapse" id="navbar-navigation">
-		<ul class="navbar-nav">
-			<li class="nav-item">
-				<a href="{{url('dashboard')}}" class="navbar-nav-link active">
-					<i class="icon-home4 mr-2"></i>
-					Dashboard
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>
-@endif -->
 </div>

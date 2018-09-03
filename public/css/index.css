@@ -13,13 +13,12 @@
   margin-top: 30px;
 }
 
-.no-overflow {
-  overflow: hidden;
+.login-box {
+  width: 300px;
 }
 
-.my-group,
-.form-control {
-  width: 50%;
+.no-overflow {
+  overflow: hidden;
 }
 
 #filter {
